@@ -8,6 +8,7 @@ class TrackApplicationTests {
 
 	@Test
 	void contextLoads() {
+        // This is empty. If the app starts, the test passes.
 	}
 
 }
