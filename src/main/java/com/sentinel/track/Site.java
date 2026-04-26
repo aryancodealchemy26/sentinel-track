@@ -13,7 +13,7 @@ public class Site {
     public String url;  // Website Link
     public String st;   // Status (UP/DOWN)
     public String last; // Last checked time
-
+    public long ping; // Stores response time in milliseconds
     // Noob-style empty constructor
     public Site() {}
 }

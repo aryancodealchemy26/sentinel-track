@@ -20,7 +20,11 @@ public class WebCtrl {
         m.addAttribute("list", all);
         return "index";
     }
-
+    @GetMapping("/del/{id}")
+    public String delete(@PathVariable Long id) {
+        repo.deleteById(id);
+        return "redirect:/";
+    }
     // This saves a new site
     @PostMapping("/add")
     public String add(@RequestParam String name, @RequestParam String url) {

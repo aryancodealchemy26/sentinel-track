@@ -43,19 +43,24 @@
                         <tr>
                             <th>Service</th>
                             <th>Endpoint</th>
+                            <th>Latency</th>
                             <th>Status</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr th:each="s : ${list}">
                             <td class="fw-bold" th:text="${s.name}"></td>
                             <td><small th:text="${s.url}"></small></td>
+                            <td th:text="${s.ping > 0} ? ${s.ping} + ' ms' : '--'"></td>
                             <td>
                                 <span class="badge" 
+                                    
                                       th:classappend="${s.st == 'UP'} ? 'status-up' : 'status-down'"
                                       th:text="${s.st}">
                                 </span>
                             </td>
+                            <td><a th:href="@{'/del/' + ${s.id}}" class="btn btn-sm btn-outline-danger">Remove</a></td>
                         </tr>
                     </tbody>
                 </table>
